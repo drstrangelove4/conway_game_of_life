@@ -6,7 +6,7 @@ https://en.wikipedia.org/wiki/Conway's_Game_of_Life
 
 The rules are:
 - Any cell with <2 neighbours dies (turns black)
-- Any cell with 2 or 3 neighbours lives (turns white)
+- Any cell with 2 or 3 neighbours lives (stays white)
 - Any cell with >3 neighbours dies (turns black)
 - Any cell with 3 neighbours comes alive (turns white)
 
