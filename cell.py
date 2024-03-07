@@ -20,7 +20,7 @@ class Cell(Turtle):
     """
 
     # Any cell with <2 neighbours dies (turns black)
-    # Any cell with 2 or 3 neighbours lives (turns white)
+    # Any cell with 2 or 3 neighbours lives (stays white if currently white)
     # Any cell with >3 neighbours dies (turns black)
     # Any cell with 3 neighbours comes alive (turns white)
 
