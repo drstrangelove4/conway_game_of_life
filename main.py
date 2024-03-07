@@ -1,7 +1,6 @@
 from turtle import *
 from cell import Cell
 from tkinter import *
-import time
 
 # ----------------------------------------------------------------------------------------------------------------------
 
@@ -108,8 +107,6 @@ def main():
 
     on = True
     while on:
-        # Put in to stop me getting flash banged everytime I test the program.
-        time.sleep(SLEEP_TIME)
         screen.update()
         # Check the status of the neighbours from each cell's perspective
         for cell_row in list_of_cells:
@@ -130,4 +127,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
