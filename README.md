@@ -15,5 +15,3 @@ be bothered to impliment a bunch of rules to dictate how objects should spawn in
 Currently this program creates all the possible cells on launch and then just edits their colour based upon the status of its neighbours. 
 This means we have a bunch of calculation for what should be dormant objects happening on every iteration of the main loop the logic is
 contained within. 
-
-That aside it's pretty fun to see how these 4 simple rules and 2 cell states can generate objects that move and reporoduce. 
