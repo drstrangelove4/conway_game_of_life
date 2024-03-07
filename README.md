@@ -1,7 +1,8 @@
-Conway's Game of Life
+John Conway's Game of Life
 --------------------
 
 My attempt at Conway's game of life using the turtle + tkinter module that ships with python.
+https://en.wikipedia.org/wiki/Conway's_Game_of_Life
 
 The rules are:
 - Any cell with <2 neighbours dies (turns black)
