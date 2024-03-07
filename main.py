@@ -7,13 +7,13 @@ import time
 
 
 # Constants. Change to edit parameters.
-CELLS_PER_ROW = 20
+CELLS_PER_ROW = 40
 HEIGHT = CELLS_PER_ROW * 25
 WIDTH = CELLS_PER_ROW * 25
 SIZE_OFFSET = 100
 GAP = 25
 BACKGROUND_COLOUR = "black"
-SLEEP_TIME = 0
+SLEEP_TIME = 1/60
 BUTTON_WIDTH = 10
 BUTTON_HEIGHT = 0
 BUTTON_FONT = ("Arial", 20, "bold")
@@ -46,7 +46,7 @@ def populate_grid(grid_width, grid_height, cells, gap):
         new_row = []
         for y in range(cells):
             # Create a cell object for each cell in the grid
-            new_cell = Cell()
+            new_cell = Cell(x=y, y=x)
             new_cell.penup()
 
             # Send the cell to the starting location
@@ -94,6 +94,11 @@ def main():
     # Populate entire space with cells
     list_of_cells = populate_grid(WIDTH, HEIGHT, CELLS_PER_ROW, GAP)
 
+    # Testing - should populate the list of cells.
+    for row in list_of_cells:
+        for cell in row:
+            cell.find_neighbours(list_of_cells, GAP)
+
     # Place a button on the screen that allows the reset of game state
     canvas = screen.getcanvas()
     button = Button(canvas.master, text="Reset", command=lambda: reset_cells_button(list_of_cells),
@@ -109,7 +114,7 @@ def main():
         # Check the status of the neighbours from each cell's perspective
         for cell_row in list_of_cells:
             for cell in cell_row:
-                cell.check_neighbours(list_of_cells)
+                cell.check_neighbours()
 
         # Update the cells based upon alive/dead condition. We call this in its own loop because we want the game
         # state to be fully assessed each for "tick" of the game.
@@ -125,3 +130,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
